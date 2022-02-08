@@ -33,13 +33,12 @@ double dotProduct(vector<double> vect, vector<double> target_vec) {
  * */
 vector<double> rotate(vector<double> vect, double dot, double length, vector<double> begin_vec, double cross){
 
-    dot = (dot * 180 / M_PI);
     if (cross == 0){
         cout << "already there";
         return vect;
     }
     else if (cross > 0){
-
+	dot =  (2*M_PI) - dot;
         double new_x = (begin_vec[0]) + (length * sin(dot));
         double new_y = (begin_vec[1]) + (length * cos(dot));
 
@@ -51,7 +50,6 @@ vector<double> rotate(vector<double> vect, double dot, double length, vector<dou
         return vect;
 
     } else{
-        dot =  (2*M_PI) - dot;
         double new_x = (begin_vec[0]) + (length * sin(dot));
         double new_y = (begin_vec[1]) + (length * cos(dot));
 
